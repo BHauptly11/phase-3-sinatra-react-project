@@ -29,6 +29,6 @@ a16 = Album.create(name: "Lady Lady", genre: "Contemporary R&B", artist: "Masego
 a17 = Album.create(name: "My Own Prison" , genre: "Post-grunge", artist: "Creed", release_year: 1997, image_url: "./images/My Own Prison - Creed.jpeg", person: p2)
 a18 = Album.create(name: "Blonde", genre: "Contemporary R&B", artist: "Frank Ocean", release_year: 2016, image_url: "./images/Blonde - Frank Ocean.jpeg", person: p2)
 a19 = Album.create(name: "Cupid Deluxe", genre: "Funk", artist: "Blood Orange", release_year: 2013, image_url: "./images/Cupid Deluxe - Blood Orange.jpeg", person: p2)
-a20 = Album.create(name: "For Emma, Forever Ago", artist: "Bon Iver", release_year: 2007, image_url: "./images/For Emma, Forever Ago - Bon Iver.jpeg", person:p2)
+a20 = Album.create(name: "For Emma, Forever Ago", genre: "Indie Folk", artist: "Bon Iver", release_year: 2007, image_url: "./images/For Emma, Forever Ago - Bon Iver.jpeg", person:p2)
 puts "✅ Done seeding!"
 
