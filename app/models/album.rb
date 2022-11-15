@@ -29,14 +29,14 @@ end
 #     # render json:{}, status: :deleted
 # end
 
-def destroy
-    album = Album.find(params[:id].destroy).destroy
-    # render json: {}, status: :ok
-    render json: {}, status: :deleted
-end
+# def destroy
+#     album = Album.find(params[:id].destroy).destroy
+#     # render json: {}, status: :ok
+#     render json: {}, status: :deleted
+# end
 
 def album_params
-    params.permit{:name, :genre, :artist, :release_year, :image_url, :person_id}
+    params.permit(:name, :genre, :artist, :release_year, :image_url, :person_id)
 end
 
 end

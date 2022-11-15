@@ -29,7 +29,7 @@ class Person < ActiveRecord::Base
     end
 
 def album_params
-        params.permit{:first_name, :last_name}
+        params.permit(:first_name, :last_name)
     end
 
 end

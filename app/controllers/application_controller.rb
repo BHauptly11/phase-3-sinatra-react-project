@@ -4,30 +4,31 @@ class ApplicationController < Sinatra::Base
   # Returns everything
   get "/albums" do
     album = Album.all
-    album.to_json{include: { :albums { include: :person }}}
+    album.to_json( include: :person )
   end
 
 # Returns specific instance
 get "/albums/:id" do
   album = Album.find(params[:id])
-  album.to_json{include: { :album { include: :person }}}
+  album.to_json( include: :person )
 end
 
 #Deletes album
-delete "/albums/id" do
-  album = Album.find(params[:id]).to_json
+delete "/albums/:id" do
+  album = Album.find(params[:id])
   album.destroy
   album.to_json
-
+end
 #Updates album
-patch "/albums:id" do
-  album = Album.find(params[:id]).to_json
-  album.update("":params[:genre])
+patch "/albums/:id" do
+  album = Album.find(params[:id])
+  album.update(person:params[:person])
+  album.to_json
 end
 
 #grabs all the places by category
-get "albums/genre_sort/:genre" do
-  genre = Album.genre_sort(params[:genre])
+get "/albums/genre_sort/:genre" do
+  genre = Album.where("genre like ?" , params[:genre])
   genre.to_json
 end
 
