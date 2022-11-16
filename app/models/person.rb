@@ -21,12 +21,12 @@ class Person < ActiveRecord::Base
         render json: comment, status: :accepted
     end
 
-    def destroy
-        person = Person.find(params[:id])
-        person.destroy
-        # render json:{}, status: :ok
-        render json:{}, status: :deleted
-    end
+    # def destroy
+    #     person = Person.find(params[:id])
+    #     person.destroy
+    #     # render json:{}, status: :ok
+    #     render json:{}, status: :deleted
+    # end
 
 def album_params
         params.permit(:first_name, :last_name)

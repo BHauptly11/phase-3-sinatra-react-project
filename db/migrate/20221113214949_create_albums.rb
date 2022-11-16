@@ -6,6 +6,7 @@ class CreateAlbums < ActiveRecord::Migration[6.1]
     t.string :artist
     t.integer :release_year
     t.string :image_url
+    t.integer :like
     t.belongs_to :person
   end    
   end

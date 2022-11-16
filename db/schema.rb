@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2022_11_13_214949) do
     t.string "artist"
     t.integer "release_year"
     t.string "image_url"
+    t.integer "like"
     t.integer "person_id"
     t.index ["person_id"], name: "index_albums_on_person_id"
   end

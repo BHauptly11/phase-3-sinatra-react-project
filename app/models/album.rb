@@ -10,21 +10,21 @@ def show
     render json: album, status: :ok
 end
 
-def create
-    album = Album.create(place_params)
-    render json: Album, status: :created
-end
+# def create_
+#     album = Album.create(params)
+#     render json: Album, status: :created
+# end
 
-def update
-    comment = Comment.find(params[:id])
-    comment.update!(comment_params)
-    render json: comment, status: :accepted
+def update_likes
+    # like = Album.find(like[:id])
+    self.update!(like: like + 1)
+    # render json: like, status: :liked
 end
 
 # for the review method
 # def destroy
-#     comment = Comment.find(params[:id])
-#     comment.destroy
+#     like = like.find(params[:id])
+#     like.destroy
 #     render json:{}, status: :ok
 #     # render json:{}, status: :deleted
 # end

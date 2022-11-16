@@ -19,12 +19,12 @@ delete "/albums/:id" do
   album.destroy
   album.to_json
 end
-#Updates album
-patch "/albums/:id" do
-  album = Album.find(params[:id])
-  album.update(person:params[:person])
-  album.to_json
-end
+# #Updates album
+# patch "/albums/:id" do
+#   album = Album.find(params[:id])
+#   album.update(person:params[:person])
+#   album.to_json
+# end
 
 #grabs all the places by category
 get "/albums/genre_sort/:genre" do
@@ -33,10 +33,22 @@ get "/albums/genre_sort/:genre" do
 end
 
 #Post request from input form
-post 'albums' do
-  album = Album.create(name:params[:name], genre:params[:genre], artist:params[:artist], release_year:params[:release_year], image_url:params[:image_url], person_id:params[:person_id] )
+post '/albums' do
+  album = Album.create(name:params[:name], genre:params[:genre], artist:params[:artist], release_year:params[:release_year], image_url:params[:image_url], person_id:params[:person_id], like:params[:like]  )
   album.to_json
 end
+
+
+#patch request
+patch "/albums/:id" do
+ album = Album.find(params[:id])
+ album.update_likes
+#  album.update(like:params[:like])
+#  album.to_json
+end
+
+
+
 
 #returns all of the last model if we have one
 # get "/last model" do
