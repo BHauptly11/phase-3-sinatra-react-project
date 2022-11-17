@@ -44,7 +44,7 @@ patch "/albums/:id" do
  album = Album.find(params[:id])
  album.update_likes
 #  album.update(like:params[:like])
-#  album.to_json
+ album.to_json
 end
 
 
