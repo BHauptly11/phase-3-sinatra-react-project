@@ -59,5 +59,9 @@ end
 #  last model.to_json
 # end
 
+get "/people" do
+  people = Person.all
+  people.to_json(include: :albums)
+end
 
 end

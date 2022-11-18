@@ -1,5 +1,5 @@
 class Person < ActiveRecord::Base
-    has_many :Persons
+    has_many :albums
 
     def index
         render json: Person.all, status: :ok
