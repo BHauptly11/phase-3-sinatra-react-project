@@ -9,6 +9,7 @@ Album.destroy_all
 puts "Who's listening today?"
 p1 = Person.create(first_name: "Bo", last_name: "Hauptly")
 p2 =Person.create(first_name: "Abigail", last_name: "Arisa")
+p3 =Person.create(first_name: "None", last_name: "None")
 
 puts "What are we listening to?"
 a1 = Album.create(name: "ZUU", genre: "Rap", artist: "Denzel Curry", release_year: 2019, image_url: "./images/ZUU.png", person: p1, like: 0)

@@ -47,7 +47,10 @@ patch "/albums/:id" do
  album.to_json
 end
 
-
+post '/people' do
+  person = Person.create(first_name:params[:first_name], last_name:params[:last_name])
+  person.to_json
+end
 
 
 #returns all of the last model if we have one
